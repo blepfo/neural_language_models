@@ -1,0 +1,5 @@
+*.swp
+*.pptx
+code/.ipynb_checkpoints/
+code/__pychache__/
+
