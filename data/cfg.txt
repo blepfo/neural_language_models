@@ -1,0 +1,15 @@
+S -> SNP SVP . | PNP PVP .
+SNP -> PropN | SN | SN SRC
+PNP -> PN | PN PRC
+SRC -> who SNP SV | who SVP
+PRC -> who PNP PV | who PVP
+VP -> SVP | PVP
+SVP -> SNDOV | SDOV SNP
+PVP -> PNDOV | PDOV PNP
+SN -> boy | girl | cat | dog
+PN -> boys | girls | cats | dogs
+propN -> john | mary
+SNDOV -> walks | lives | sees | hears
+SDOV -> chases | feeds | sees | hears
+PNDOV -> walk | live | see | hear
+PDOV -> chase | feed | see | hear
