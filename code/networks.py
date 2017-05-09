@@ -40,8 +40,8 @@ class RNN:
 		if direct:
 			to_out_dim = architecture[0] + architecture[1]
 		else:
-			to_out_dim = architecture[1]
 		self.W_O = random_matrix([architecture[2], to_out_dim])
+			to_out_dim = architecture[1]
 		# If backward connections, create W_B matrix from output back to hidden
 		if backward:
 			self.W_B = random_matrix([architecture[1], architecture[2]])		
@@ -83,6 +83,16 @@ class RNN:
 		element of a sequence given the previous """
 		num_samples = len(training_data)
 		batches_per_epoch = int(num_samples / batch_size)
+		
+		data = np.shuffle(training_data)
+	
+	def bptt(self, x, y)
+		s, o = self.evaluate(x)
+		dEdI = np.zeros(self.W_I.shape)
+		dEdH = np.zeros(self.W_H.shape)
+		dEdO = np.zeros(self.W_O.shape)
+		delta_o = o
+		delta_o[np.arange(len(y)), y] -= 1
 		
 	
 # SRN Variations	
