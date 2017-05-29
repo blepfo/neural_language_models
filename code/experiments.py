@@ -20,9 +20,40 @@ def decode_sentence(encoded_sentence):
     # Convert list of vector encodings to sentence
     return list(map(lambda encoding : decode(encoding), encoded_sentence))
 
-	
+
 decodings = load_decodings()
 encodings = load_encodings()
 
 training_data = load_training()
 testing_data = load_testing()
+
+vocab_length = len(encodings)
+num_training = len(training_data)
+num_testing = len(testing_data)
+
+batch_size = 100
+num_epochs = 1000
+
+architecture = [vocab_length, 1000, vocab_length]
+
+# Create networks
+SRN = networks.SRN(architecture)
+SRN_D = networks.SRN_D(architecture)
+SRN_B = networks.SRN_B(architecture)
+SRN_DB = networks.SRN_DB(architecture)
+
+ESN = networks.ESN(architecture)
+ESN_D = networks.ESN_D(architecture)
+ESN_B = networks.ESN_B(architecture)
+ESN_DB = networks.ESN_DB(architecture)
+
+# Train networks 
+SRN.train(training_data, batch_size, num_epochs))
+SRN_D.train(training_data, batch_size, num_epochs))
+SRN_B.train(training_data, batch_size, num_epochs))
+SRN_DB.train(training_data, batch_size, num_epochs))
+
+ESN.train(training_data, batch_size, 5))
+ESN_D.train(training_data, batch_size, 5))
+ESN_B.train(training_data, batch_size, 5))
+ESN_DB.train(training_data, batch_size, 5))
