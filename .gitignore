@@ -1,6 +1,6 @@
 *.swp
 *.pptx
 code/.ipynb_checkpoints/
-code/__pychache__
+/code/__pychache__
 */__pychache__/
 
